@@ -1,0 +1,22 @@
+version: '3.5'
+
+services:
+  local:
+    build:
+      context: .
+    env_file:
+      - ./local.env
+    ports:
+      - "8081:8080"
+    # Airflow user (50000) and root group ID
+    user: "50000:1000"
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./include:/opt/airflow/include
+      - ./requirements.txt:/opt/airflow/requirements.txt
+      - ./webserver_config.py:/opt/airflow/webserver_config.py
+    entrypoint:
+      - bash
+      - -xc
+      - |-
+        airflow standalone
