@@ -19,4 +19,5 @@ services:
       - bash
       - -xc
       - |-
+        pip install -r requirements.txt
         airflow standalone
