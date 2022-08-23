@@ -1,1 +1,1 @@
-uritools==4.0.0
+python-nomad==1.4.1

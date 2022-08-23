@@ -12,6 +12,7 @@ services:
     user: "50000:1000"
     volumes:
       - ./dags:/opt/airflow/dags
+      - ./plugins:/opt/airflow/plugins
       - ./include:/opt/airflow/include
       - ./requirements.txt:/opt/airflow/requirements.txt
       - ./webserver_config.py:/opt/airflow/webserver_config.py
